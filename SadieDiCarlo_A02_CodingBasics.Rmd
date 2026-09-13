@@ -1,0 +1,143 @@
+---
+title: "Assignment 2: Coding Basics"
+author: "Sadie DiCarlo"
+output: pdf_document
+geometry: margin=2.54cm
+editor_options: 
+  chunk_output_type: console
+toc: true
+---
+
+## OVERVIEW
+
+This exercise accompanies the lessons/labs in Environmental Data Explorations on reproducibility and coding basics.
+
+## Directions
+
+1.  Rename this file `<FirstLast>_A02_CodingBasics.Rmd` (replacing `<FirstLast>` with your first and last name).
+2.  Change "Student Name" on line 3 (above) with your name.
+3.  Work through the steps, **creating code and output** that fulfill each instruction.
+4.  Be sure to **answer the questions** in this assignment document.
+5.  When you have completed the assignment, **Knit** the text and code into a single PDF file.
+6.  After Knitting, submit the completed exercise (PDF file) to Canvas.
+
+## Crafting Reports - Part 1
+
+### Import packages and data, suppressing messages
+
+Set the following R code chunk so that it runs when knit, but no messages, errors, or any output is shown. The code itself, however, should be displayed.
+
+```{r project.setup}
+#Import libraries
+library(tidyverse)
+library(knitr)
+
+```
+
+
+## Coding Basics - Part 2
+
+1.  Generate a sequence of numbers from one to 55, increasing by fives. Assign this sequence a name.
+
+2.  Compute the mean and median of this sequence.
+
+3.  Ask R to determine whether the mean is greater than the median.
+
+4.  Insert comments in your code to describe what you are doing.
+
+```{r basics 1}
+#1. Sequence of numbers from 1 to 55 by 5
+values <- seq(from = 1, to = 55, by = 5)
+#2. Computing mean and median of values sequence
+mean(values)
+median(values)
+#3. Is mean greater than median?
+values_mean <- mean(values) 
+values_median <- median(values)
+values_mean > values_median
+
+```
+
+## Coding Basics - Part 3
+
+5.  Create three vectors, each with four components, consisting of (a) student names, (b) test scores, and (c) whether they are on scholarship or not (TRUE or FALSE).
+
+6.  Label each vector with a comment on what type of vector it is.
+
+7.  Combine each of the vectors into a data frame. Assign the data frame an informative name.
+
+8.  Label the columns of your data frame with informative titles.
+
+```{r basics 2}
+
+testscores_table <- data.frame(
+  studentnames <- c("Sam", "John", "Barbara", "Todd"), #characters
+  testscores <- c("97","78", "66","99"), #numbers
+  scholarships <- c(TRUE,FALSE,TRUE,TRUE) #booleans
+)
+
+knitr::kable(
+  testscores_table,
+  col.names = c("Students", "Test Scores", "Scholarship?"),
+  caption = "Summary of student test scores and scholarship status"
+)
+
+```
+
+9.  QUESTION: How is this data frame different from a matrix?
+
+> Answer: Matrices are one data type whereas data frames can be multiple types of data.
+
+10. Create a function with one input. In this function, use `if`...`else` to evaluate the value of the input: if it is greater than 50, print the word "Pass"; otherwise print the word "Fail". 
+
+11. Create a second function that does the exact same thing as the previous one but uses `ifelse()` instead if `if`...`else `. 
+
+12. Run both functions using the value 52.5 as the input
+
+13. Run both functions using the **vector** of student test scores you created as the input. (Only one will work properly...)
+
+```{r basics 3}
+#10. Create a function using if...else
+value1 <- function(x) {
+  if (x > 50) {
+    "Pass"
+  } 
+  else {
+    "Fail"
+  }
+}
+
+#11. Create a function using ifelse()
+value2 <- function(x) {
+  ifelse(x > 50, "Pass", "Fail")
+}
+
+#12a. Run the first function with the value 52.5
+value1(52.5)
+
+#12b. Run the second function with the value 52.5
+value2(52.5)
+
+#13a. Run the first function with the vector of test scores
+#value1(testscores)
+#13b. Run the second function with the vector of test scores
+value2(testscores)
+```
+
+14. QUESTION: Which option of `if`...`else` vs. `ifelse` worked? Why? (Hint: search the web for "R vectorization")
+
+> Answer: Only the 'ifselse' method worked. It's because for the 'ifelse' function, r runs all values at the same time instead of running each value one after another.
+
+
+## Crafting reports - Part 4
+
+### Knit and submit.
+
+Add a table of contents to your document and knit to a PDF. Submit your PDF to Canvas, but also be sure to commit and push your Rmd file used to create this knit document to GitHub. In the section below, add a link to your GitHub repository. 
+
+### Github link
+
+> Answer: https://github.com/sadiedicarlo/EDE_R_Lab_F26
+
+
+**NOTE** Before knitting, you'll need to comment out the call to the function in Q13 that does not work. (A document can't knit if the code it contains causes an error!)
