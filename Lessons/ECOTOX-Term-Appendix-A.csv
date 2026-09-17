@@ -1,0 +1,8 @@
+"TYPE","TERM","DESCRIPTION","DEFINITION"
+"Organic","A","Active ingredient","Chemical substance in a product that is responsible for the pesticidal (toxic) effect. Reported as ""A"" when the author refers to the concentration as active ingredient, active principle, active substance (A.S.), acid equivalent or various grades of reagents (ie., Analytical, Reagent or Technical)."
+"Organic","F","Formulation","Way in which basic pesticide (toxicant) is prepared for practical use; generally reserved for commercial preparation prior to actual use and does not include the final dilution. Also included in this category are organic compounds with no pesticidal activity (e.g.; PCB, dioxin)."
+"Metal/Organometals","D","Dissolved","Those constituents of an unacidified sample that pass through a 0.45 um membrane filter (e.g. soluble metal)."
+"Metal/Organometals","L","Labile","The labile or free ion metal concentration determined by various analytical methods."
+"Metal/Organometals","T","Total","The concentration of metals determined on an unfiltered sample after vigorous digestion, or the sum of the concentrations of metals in both dissolved and suspended fractions. Heavy metals and single elements (e.g. Na, Cl, Br) are recoded as T."
+"Inorganic non-metals","T","Total","The dissociated, charged form of nitrogen or hydrogen related chemicals.  This can take on numerous forms, e.g.; ammonium (NH+4), nitrite (NO-2), etc."
+"Inorganic non-metals","U","Unionized","The undissociated, uncharged form of ammonia or hydrogen sulfide. The ammonia molecule, NH3, is the unionized form."

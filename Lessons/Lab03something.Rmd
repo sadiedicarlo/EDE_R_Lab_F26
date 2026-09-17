@@ -134,7 +134,7 @@ One categorical, one distribution, one relationship. Detective tools only —
 customization is M5.
 
 ```{r plots, fig.height = 3, fig.width = 4, warning = FALSE}
-# (1) CATEGORICAL — number of samples from each data Source (bar chart)
+# (1) CATEGORICAL — number of samples from each data Source (theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))`)
 
 
 # (2) DISTRIBUTION — daily mean PM2.5 concentration (histogram)
